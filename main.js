@@ -29,3 +29,21 @@ function generateFibonacci() {
   }
   console.log(fibonacciArray);
 }
+
+////////////////////////////
+// Problem 3
+/*
+By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
+*/
+function sumOfEvenFibonacci() {
+  let fibonacciArray = [1, 2];
+  let sum = 0;
+  while (fibonacciArray[fibonacciArray.length - 1] <= 4000000) {
+    if (fibonacciArray[fibonacciArray.length - 1] % 2 === 0) {
+      sum += fibonacciArray[fibonacciArray.length - 1];
+    }
+    let newValue = fibonacciArray[fibonacciArray.length - 1] + fibonacciArray[fibonacciArray.length - 2];
+    fibonacciArray.push(newValue);
+  }
+  console.log(sum);
+}
