@@ -47,3 +47,28 @@ function sumOfEvenFibonacci() {
   }
   console.log(sum);
 }
+
+//////////////////////
+// Problem 3 Project Euler
+/*
+The prime factors of 13195 are 5, 7, 13 and 29.
+What is the largest prime factor of the number 600851475143 ?
+*/
+
+function largestPrimeFactor() {
+  let primeFactors = [];
+  let value = 600851475143;
+  for (let i = 2; i <= value; i++) {
+    let exausted = true;
+    while (exausted) {
+      if (value % i === 0) {
+        if (primeFactors.indexOf(i) === -1)
+          primeFactors.push(i);
+        value = value / i;
+      } else {
+        exausted = false;
+      }
+    }
+  }
+  console.log(primeFactors[primeFactors.length - 1]);
+}
